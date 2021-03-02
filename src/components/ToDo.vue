@@ -49,15 +49,19 @@ export default {
 <style lang="css">
   #container {
     align-items: center;
+    display: flex;
+    flex-direction: column;
   }
   #title {
     color: red;
   }
   #tasks {
     color: black;
+    margin-top: 10px;
   }
   #list {
     height: 25px;
+    margin-bottom: 20px;
     border-radius: 12px;
   }
   button {
