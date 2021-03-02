@@ -1,13 +1,13 @@
 <template lang="html">
-  <div class="container">
-    <h1 style="align-self: center">LISTA DE TAREAS</h1>
+  <div id="container">
+    <h1 id="title">LISTA DE TAREAS</h1>
     <form v-on:submit='addTodo($event)'>
-      <input type='text' placeholder='Ingresar Tarea' v-model='newTodo'/>
-      <input type='submit' />
+      <input id="list" type='text' placeholder='Ingresar Tarea' v-model='newTodo'/>
+      <button id="button" type='submit'>ENVIAR</button>
     </form>
     <ul>
-      <li v-for='todo in todos' :key='todo._id'>
-        <button @click='deleteTodo(todo._id)' >Eliminar</button> {{todo.title}}
+      <li id="tasks" v-for='todo in todos' :key='todo._id'>
+        <button id="buttons" @click='deleteTodo(todo._id)' >ELIMINAR</button> {{todo.title}}
       </li>
     </ul>
   </div>
@@ -47,5 +47,30 @@ export default {
 }
 </script>
 <style lang="css">
+  #container {
+    align-items: center;
+  }
+  #title {
+    color: red;
+  }
+  #tasks {
+    color: black;
+  }
+  #list {
+    height: 25px;
+    border-radius: 12px;
+  }
+  button {
+    transition-duration: 0.4s;
+    border-color: #4CAF50;
+    background-color: white;
+    border-radius: 12px;
+    height: 30px;
+    width: 100px;
+  }
+  button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
 
 </style>
